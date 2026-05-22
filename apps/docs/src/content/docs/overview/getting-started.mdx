@@ -1,0 +1,43 @@
+---
+title: Getting Started
+description: Install OntoUI and add it to your React project.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+OntoUI is a React component library built on top of [Base UI](https://base-ui.com).
+It provides accessible components styled with CSS Modules.
+
+## Requirements
+
+- **React** 18 or later
+- **Node.js** 18 or later
+
+## Install the package
+
+<Tabs syncKey="package_manager">
+  <TabItem label="npm">``` npm install @ontoui/react ```</TabItem>
+  <TabItem label="pnpm">``` pnpm add @ontoui/react ```</TabItem>
+  <TabItem label="yarn">``` yarn add @ontoui/react ```</TabItem>
+  <TabItem label="bun">``` bun add @ontoui/react ```</TabItem>
+</Tabs>
+
+## Import the styles
+
+Add this once in your app entry point (e.g. `main.tsx`, `layout.tsx`, or `_app.tsx`):
+
+```ts
+import '@ontoui/react/styles';
+```
+
+## Use a component
+
+```tsx
+import { Button } from '@ontoui/react';
+
+export default function App() {
+  return <Button variant="primary">Get started</Button>;
+}
+```
+
+That's it. Browse the **Components** section in the sidebar to explore all available components.

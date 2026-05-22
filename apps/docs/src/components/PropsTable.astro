@@ -1,0 +1,99 @@
+---
+import { withCustomConfig } from 'react-docgen-typescript';
+import path from 'node:path';
+
+interface Props {
+  component: string;
+  name?: string;
+}
+
+const { component, name } = Astro.props;
+
+const repoRoot = path.resolve(process.cwd(), '../..');
+const tsconfig = path.join(repoRoot, 'packages/react/tsconfig.json');
+const componentFile = path.join(
+  repoRoot,
+  'packages/react/src/components',
+  component,
+  `${component}.tsx`,
+);
+
+// Cache parsed results per file path so multiple <PropsTable> on the same page
+// only trigger one TypeScript parse instead of one per instance.
+const cache = globalThis as Record<string, unknown> as Record<
+  string,
+  ReturnType<ReturnType<typeof withCustomConfig>['parse']>
+>;
+const cacheKey = `__propsTableCache__${componentFile}`;
+if (!cache[cacheKey]) {
+  const parser = withCustomConfig(tsconfig, {
+    shouldExtractLiteralValuesFromEnum: true,
+    shouldRemoveUndefinedFromOptional: true,
+    skipChildrenPropWithoutDoc: false,
+    shouldIncludePropTagMap: true,
+  });
+  cache[cacheKey] = parser.parse(componentFile);
+}
+const docs = cache[cacheKey];
+
+const doc = name ? (docs.find((d) => d.displayName === name) ?? docs[0]) : docs[0];
+const props = Object.values(doc?.props ?? {}).filter((p) => p.name !== 'key');
+
+function cleanupType(type: string): string {
+  // Remove outer wrapping parentheses from function types: ((x) => void) → (x) => void
+  let result = type;
+  if (result.startsWith('((') && result.endsWith(')')) {
+    result = result.slice(1, -1);
+  }
+  // Replace expanded React event types back to React.* form:
+  // e.g. MouseEvent<HTMLButtonElement, MouseEvent> → React.MouseEvent<HTMLButtonElement>
+  // e.g. FocusEvent<HTMLButtonElement, Element>   → React.FocusEvent<HTMLButtonElement>
+  result = result.replace(
+    /\b(Mouse|Keyboard|Focus)Event<([^,>]+(?:<[^>]*>)?),\s*[^>,]+>/g,
+    'React.$1Event<$2>',
+  );
+  return result;
+}
+
+function resolveType(prop: (typeof props)[number]): string {
+  if (
+    Array.isArray(prop.type?.value) &&
+    prop.type.value.every((v: unknown) => typeof (v as { value: unknown }).value === 'string')
+  ) {
+    return cleanupType((prop.type.value as { value: string }[]).map((v) => v.value).join(' | '));
+  }
+  return cleanupType(prop.type?.name ?? '—');
+}
+---
+
+<table style="display: table; width: 100%; table-layout: fixed;">
+  <thead>
+    <tr>
+      <th style="width: 30%;">Prop</th>
+      <th style="width: 50%;">Type</th>
+      <th style="width: 20%;">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      props.map((prop) => (
+        <tr>
+          <td>
+            <code>{prop.name + (!prop.required ? '?' : '')}</code>
+          </td>
+          <td>
+            <code>{resolveType(prop)}</code>
+          </td>
+          <td>
+            {(() => {
+              const tagDefault = (prop as any).tags?.default;
+              if (tagDefault != null) return String(tagDefault);
+              if (prop.defaultValue != null) return String(prop.defaultValue.value);
+              return <>&mdash;</>;
+            })()}
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

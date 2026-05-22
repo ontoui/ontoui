@@ -1,0 +1,63 @@
+---
+title: Modal
+description: A dialog that opens on top of the entire page.
+---
+
+import { GeneralDemo } from '../../../components/ModalShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A modal dialog that renders on top of the page with a backdrop.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Modal } from '@ontoui/react';
+
+<Modal.Root>
+  <Modal.Trigger>Open modal</Modal.Trigger>
+  <Modal.Panel>
+    <Modal.Title>Title</Modal.Title>
+    <Modal.Description>Description</Modal.Description>
+    <Modal.Close>Close</Modal.Close>
+  </Modal.Panel>
+</Modal.Root>;
+```
+
+## Anatomy
+
+The `Modal` compound component is made up of the following parts:
+
+| Part                | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| `Modal.Root`        | Root context provider. Manages open state.                                           |
+| `Modal.Trigger`     | Button that opens the modal.                                                         |
+| `Modal.Panel`       | The modal window. Renders into a portal with a backdrop. Receives focus when opened. |
+| `Modal.Title`       | Accessible heading that labels the dialog.                                           |
+| `Modal.Description` | Supporting text associated with the dialog.                                          |
+| `Modal.Close`       | Button that closes the modal.                                                        |
+
+## API Reference
+
+### `Modal.Root`
+
+<PropsTable component="Modal" name="Modal.Root" />
+
+### `Modal.Trigger`
+
+<PropsTable component="Modal" name="Modal.Trigger" />
+
+### `Modal.Panel`
+
+<PropsTable component="Modal" name="Modal.Panel" />
+
+### `Modal.Title`
+
+<PropsTable component="Modal" name="Modal.Title" />
+
+### `Modal.Description`
+
+<PropsTable component="Modal" name="Modal.Description" />
+
+### `Modal.Close`
+
+<PropsTable component="Modal" name="Modal.Close" />

@@ -1,0 +1,45 @@
+---
+title: Button
+description: An interactive element that performs an action when clicked.
+---
+
+import { GeneralDemo, VariantDemo, DisabledDemo } from '../../../components/ButtonShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+An interactive element that performs an action when clicked.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Button } from '@ontoui/react';
+
+<Button>Button</Button>;
+```
+
+## Examples
+
+### Variant
+
+Use the `variant` prop to control the visual style of the button.
+
+<VariantDemo client:load />
+
+```tsx
+<Button>Primary</Button>
+<Button variant="secondary">Secondary</Button>
+```
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction.
+
+<DisabledDemo client:load />
+
+```tsx
+<Button disabled>Primary</Button>
+<Button variant="secondary" disabled>Secondary</Button>
+```
+
+## API Reference
+
+<PropsTable component="Button" />
