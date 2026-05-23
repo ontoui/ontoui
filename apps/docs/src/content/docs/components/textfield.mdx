@@ -1,0 +1,82 @@
+---
+title: TextField
+description: A labeled text input with support for descriptions and validation errors.
+---
+
+import { GeneralDemo, InvalidDemo, DisabledDemo } from '../../../components/TextFieldShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A labeled text input with support for descriptions and validation errors.
+
+<GeneralDemo client:load />
+
+```tsx
+import { TextField } from '@ontoui/react';
+
+<TextField.Root>
+  <TextField.Label>Email</TextField.Label>
+  <TextField.Control type="email" placeholder="you@example.com" />
+  <TextField.Description>We'll never share your email.</TextField.Description>
+</TextField.Root>;
+```
+
+## Anatomy
+
+| Part                    | Description                                             |
+| ----------------------- | ------------------------------------------------------- |
+| `TextField.Root`        | Container that groups all parts and manages field state |
+| `TextField.Label`       | Accessible label associated with the control            |
+| `TextField.Control`     | The underlying `<input>` element                        |
+| `TextField.Description` | Optional helper text displayed below the control        |
+| `TextField.Error`       | Error message shown when the field is invalid           |
+
+## Examples
+
+### Invalid
+
+Set the `invalid` prop on `TextField.Root` to mark the field as invalid and reveal the error message.
+
+<InvalidDemo client:load />
+
+```tsx
+<TextField.Root invalid>
+  <TextField.Label>Username</TextField.Label>
+  <TextField.Control placeholder="Enter username" />
+  <TextField.Error>Username is required.</TextField.Error>
+</TextField.Root>
+```
+
+### Disabled
+
+Set `disabled` on `TextField.Root` to disable the entire field group.
+
+<DisabledDemo client:load />
+
+```tsx
+<TextField.Root disabled>
+  <TextField.Label>Read-only field</TextField.Label>
+  <TextField.Control placeholder="Disabled input" />
+</TextField.Root>
+```
+
+## API Reference
+
+### `TextField.Root`
+
+<PropsTable component="TextField" name="TextField.Root" />
+
+### `TextField.Label`
+
+<PropsTable component="TextField" name="TextField.Label" />
+
+### `TextField.Control`
+
+<PropsTable component="TextField" name="TextField.Control" />
+
+### `TextField.Description`
+
+<PropsTable component="TextField" name="TextField.Description" />
+
+### `TextField.Error`
+
+<PropsTable component="TextField" name="TextField.Error" />

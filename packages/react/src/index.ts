@@ -10,3 +10,12 @@ export type {
   ModalDescriptionProps,
   ModalCloseProps,
 } from './components/Modal';
+
+export { TextField } from './components/TextField';
+export type {
+  TextFieldRootProps,
+  TextFieldLabelProps,
+  TextFieldControlProps,
+  TextFieldDescriptionProps,
+  TextFieldErrorProps,
+} from './components/TextField';
