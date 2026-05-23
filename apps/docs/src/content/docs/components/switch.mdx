@@ -1,0 +1,71 @@
+---
+title: Switch
+description: A control that indicates whether a setting is on or off.
+---
+
+import { GeneralDemo, DefaultCheckedDemo, DisabledDemo } from '../../../components/SwitchShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A control that indicates whether a setting is on or off.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Switch } from '@ontoui/react';
+
+<label>
+  <Switch.Root>
+    <Switch.Thumb />
+  </Switch.Root>
+  Notifications
+</label>;
+```
+
+## Anatomy
+
+| Part           | Element  | Description                                                   |
+| -------------- | -------- | ------------------------------------------------------------- |
+| `Switch.Root`  | `<span>` | The switch track. Renders a hidden input beside.              |
+| `Switch.Thumb` | `<span>` | The movable indicator that slides when the switch is toggled. |
+
+## Examples
+
+### Default checked
+
+Use the `defaultChecked` prop to render the switch in the on state initially.
+
+<DefaultCheckedDemo client:load />
+
+```tsx
+<label>
+  <Switch.Root defaultChecked>
+    <Switch.Thumb />
+  </Switch.Root>
+  Enabled by default
+</label>
+```
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction.
+
+<DisabledDemo client:load />
+
+```tsx
+<label>
+  <Switch.Root disabled>
+    <Switch.Thumb />
+  </Switch.Root>
+  Disabled
+</label>
+```
+
+## API Reference
+
+### `Switch.Root`
+
+<PropsTable component="Switch" name="Switch.Root" />
+
+### `Switch.Thumb`
+
+<PropsTable component="Switch" name="Switch.Thumb" />

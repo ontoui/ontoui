@@ -73,6 +73,9 @@ export type {
   SliderThumbProps,
 } from './components/Slider';
 
+export { Switch } from './components/Switch';
+export type { SwitchRootProps, SwitchThumbProps } from './components/Switch';
+
 export { Toast } from './components/Toast';
 export type {
   ToastProviderProps,
