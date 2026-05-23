@@ -49,10 +49,8 @@ describe('Tooltip', () => {
       </Tooltip.Provider>,
     );
     await userEvent.hover(screen.getByRole('button', { name: 'hover me' }));
-    await waitFor(() => {
-      const tooltip = screen.getByText('tooltip text');
-      expect(tooltip).toHaveClass('Tooltip-Content');
-    });
+    const tooltip = await screen.findByText('tooltip text');
+    expect(tooltip).toHaveClass('Tooltip-Content');
     expect(tooltip).toHaveClass('custom-tooltip');
   });
 
