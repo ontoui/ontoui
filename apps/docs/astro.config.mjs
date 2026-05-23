@@ -24,6 +24,7 @@ export default defineConfig({
             { label: 'Button', slug: 'components/button' },
             { label: 'Modal', slug: 'components/modal' },
             { label: 'TextField', slug: 'components/textfield' },
+            { label: 'Tooltip', slug: 'components/tooltip' },
           ],
         },
       ],

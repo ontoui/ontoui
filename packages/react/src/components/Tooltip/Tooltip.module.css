@@ -1,0 +1,22 @@
+.Tooltip-Content {
+  box-sizing: border-box;
+  max-width: 280px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: #1f2937;
+  color: #f9fafb;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.24);
+  transform-origin: var(--transform-origin);
+  transition:
+    opacity 0.1s ease,
+    transform 0.1s ease;
+}
+
+.Tooltip-Content[data-starting-style],
+.Tooltip-Content[data-ending-style] {
+  opacity: 0;
+  transform: scale(0.95);
+}

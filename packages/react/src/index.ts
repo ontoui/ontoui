@@ -19,3 +19,12 @@ export type {
   TextFieldDescriptionProps,
   TextFieldErrorProps,
 } from './components/TextField';
+
+export { Tooltip } from './components/Tooltip';
+export type {
+  TooltipProviderProps,
+  TooltipRootProps,
+  TooltipTriggerProps,
+  TooltipSide,
+  TooltipContentProps,
+} from './components/Tooltip';

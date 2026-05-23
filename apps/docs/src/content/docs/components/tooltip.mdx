@@ -1,0 +1,63 @@
+---
+title: Tooltip
+description: A popup that appears when an element is hovered or focused, showing a hint for sighted users.
+---
+
+import { GeneralDemo, PlacementDemo } from '../../../components/TooltipShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A popup that appears when an element is hovered or focused, showing a hint for sighted users.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Tooltip } from '@ontoui/react';
+
+<Tooltip.Provider>
+  <Tooltip.Root>
+    <Tooltip.Trigger>Hover me</Tooltip.Trigger>
+    <Tooltip.Content>This is a tooltip</Tooltip.Content>
+  </Tooltip.Root>
+</Tooltip.Provider>;
+```
+
+## Anatomy
+
+The `Tooltip` compound component is made up of the following parts:
+
+| Part               | Description                                                      |
+| ------------------ | ---------------------------------------------------------------- |
+| `Tooltip.Provider` | Provides shared delay settings for multiple tooltips in a group. |
+| `Tooltip.Root`     | Root context provider. Manages open state.                       |
+| `Tooltip.Trigger`  | The element that the tooltip is attached to.                     |
+| `Tooltip.Content`  | The tooltip popup. Renders into a portal above the trigger.      |
+
+## Examples
+
+### Placement
+
+Use the `side` prop on `Tooltip.Content` to control which side the tooltip appears on.
+
+<PlacementDemo client:load />
+
+```tsx
+<Tooltip.Content side="right">Tooltip on right</Tooltip.Content>
+```
+
+## API Reference
+
+### `Tooltip.Provider`
+
+<PropsTable component="Tooltip" name="Tooltip.Provider" />
+
+### `Tooltip.Root`
+
+<PropsTable component="Tooltip" name="Tooltip.Root" />
+
+### `Tooltip.Trigger`
+
+<PropsTable component="Tooltip" name="Tooltip.Trigger" />
+
+### `Tooltip.Content`
+
+<PropsTable component="Tooltip" name="Tooltip.Content" />
