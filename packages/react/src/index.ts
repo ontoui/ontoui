@@ -1,6 +1,9 @@
 export { Button } from './components/Button';
 export type { ButtonProps, ButtonVariant } from './components/Button';
 
+export { Checkbox } from './components/Checkbox';
+export type { CheckboxRootProps, CheckboxIndicatorProps } from './components/Checkbox';
+
 export { Modal } from './components/Modal';
 export type {
   ModalRootProps,

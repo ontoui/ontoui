@@ -22,6 +22,7 @@ export default defineConfig({
           label: 'Components',
           items: [
             { label: 'Button', slug: 'components/button' },
+            { label: 'Checkbox', slug: 'components/checkbox' },
             { label: 'Modal', slug: 'components/modal' },
             { label: 'Select', slug: 'components/select' },
             { label: 'Tabs', slug: 'components/tabs' },

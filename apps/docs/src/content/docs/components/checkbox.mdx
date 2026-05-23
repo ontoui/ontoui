@@ -1,0 +1,71 @@
+---
+title: Checkbox
+description: An interactive control that allows the user to toggle a boolean value.
+---
+
+import { GeneralDemo, DisabledDemo, IndeterminateDemo } from '../../../components/CheckboxShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+An interactive control that allows the user to toggle a boolean value.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Checkbox } from '@ontoui/react';
+
+<label>
+  <Checkbox.Root>
+    <Checkbox.Indicator />
+  </Checkbox.Root>
+  Accept terms and conditions
+</label>;
+```
+
+## Anatomy
+
+| Part                 | Element  | Description                                          |
+| -------------------- | -------- | ---------------------------------------------------- |
+| `Checkbox.Root`      | `<span>` | The checkbox control. Renders a hidden input beside. |
+| `Checkbox.Indicator` | `<span>` | Shown when the checkbox is checked or indeterminate. |
+
+## Examples
+
+### Disabled
+
+Use the `disabled` prop to prevent interaction.
+
+<DisabledDemo client:load />
+
+```tsx
+<label>
+  <Checkbox.Root disabled>
+    <Checkbox.Indicator />
+  </Checkbox.Root>
+  Disabled
+</label>
+```
+
+### Indeterminate
+
+Use the `indeterminate` prop to represent a partially-selected state. Provide a custom indicator icon (e.g. a dash) to distinguish it from checked.
+
+<IndeterminateDemo client:load />
+
+```tsx
+<label>
+  <Checkbox.Root indeterminate>
+    <Checkbox.Indicator>{/* dash icon */}</Checkbox.Indicator>
+  </Checkbox.Root>
+  Indeterminate
+</label>
+```
+
+## API Reference
+
+### `Checkbox.Root`
+
+<PropsTable component="Checkbox" name="Checkbox.Root" />
+
+### `Checkbox.Indicator`
+
+<PropsTable component="Checkbox" name="Checkbox.Indicator" />
