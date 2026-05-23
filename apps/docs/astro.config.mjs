@@ -27,6 +27,7 @@ export default defineConfig({
             { label: 'Modal', slug: 'components/modal' },
             { label: 'Radio Group', slug: 'components/radiogroup' },
             { label: 'Select', slug: 'components/select' },
+            { label: 'Slider', slug: 'components/slider' },
             { label: 'Tabs', slug: 'components/tabs' },
             { label: 'TextField', slug: 'components/textfield' },
             { label: 'Toast', slug: 'components/toast' },

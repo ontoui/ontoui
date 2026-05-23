@@ -62,6 +62,17 @@ export type {
   SelectSeparatorProps,
 } from './components/Select';
 
+export { Slider } from './components/Slider';
+export type {
+  SliderRootProps,
+  SliderLabelProps,
+  SliderValueProps,
+  SliderControlProps,
+  SliderTrackProps,
+  SliderIndicatorProps,
+  SliderThumbProps,
+} from './components/Slider';
+
 export { Toast } from './components/Toast';
 export type {
   ToastProviderProps,

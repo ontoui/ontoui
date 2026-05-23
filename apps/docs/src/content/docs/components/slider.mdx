@@ -1,0 +1,108 @@
+---
+title: Slider
+description: A draggable input for selecting a numeric value within a range.
+---
+
+import { GeneralDemo, RangeDemo, DisabledDemo } from '../../../components/SliderShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A draggable input for selecting a numeric value within a range.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Slider } from '@ontoui/react';
+
+<Slider.Root defaultValue={50}>
+  <Slider.Label>Volume</Slider.Label>
+  <Slider.Value />
+  <Slider.Control>
+    <Slider.Track>
+      <Slider.Indicator />
+      <Slider.Thumb aria-label="Volume" />
+    </Slider.Track>
+  </Slider.Control>
+</Slider.Root>;
+```
+
+## Anatomy
+
+| Part               | Element    | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| `Slider.Root`      | `<div>`    | Groups all parts and holds the slider state.                 |
+| `Slider.Label`     | `<div>`    | An accessible label associated with the slider thumbs.       |
+| `Slider.Value`     | `<output>` | Displays the current value as text.                          |
+| `Slider.Control`   | `<div>`    | The clickable, interactive area of the slider.               |
+| `Slider.Track`     | `<div>`    | The full range of the slider; contains indicator and thumbs. |
+| `Slider.Indicator` | `<div>`    | Fills the track to visualize the current value.              |
+| `Slider.Thumb`     | `<div>`    | The draggable handle positioned at the current value.        |
+
+## Examples
+
+### Range slider
+
+Pass an array of values to `Slider.Root` and place one `Slider.Thumb` per value to create a range slider.
+
+<RangeDemo client:load />
+
+```tsx
+<Slider.Root defaultValue={[20, 80]}>
+  <Slider.Label>Price range</Slider.Label>
+  <Slider.Control>
+    <Slider.Track>
+      <Slider.Indicator />
+      <Slider.Thumb index={0} aria-label="Minimum price" />
+      <Slider.Thumb index={1} aria-label="Maximum price" />
+    </Slider.Track>
+  </Slider.Control>
+</Slider.Root>
+```
+
+### Disabled
+
+Set `disabled` on `Slider.Root` to prevent interaction.
+
+<DisabledDemo client:load />
+
+```tsx
+<Slider.Root defaultValue={40} disabled>
+  <Slider.Label>Brightness</Slider.Label>
+  <Slider.Value />
+  <Slider.Control>
+    <Slider.Track>
+      <Slider.Indicator />
+      <Slider.Thumb aria-label="Brightness" />
+    </Slider.Track>
+  </Slider.Control>
+</Slider.Root>
+```
+
+## API Reference
+
+### `Slider.Root`
+
+<PropsTable component="Slider" name="Slider.Root" />
+
+### `Slider.Label`
+
+<PropsTable component="Slider" name="Slider.Label" />
+
+### `Slider.Value`
+
+<PropsTable component="Slider" name="Slider.Value" />
+
+### `Slider.Control`
+
+<PropsTable component="Slider" name="Slider.Control" />
+
+### `Slider.Track`
+
+<PropsTable component="Slider" name="Slider.Track" />
+
+### `Slider.Indicator`
+
+<PropsTable component="Slider" name="Slider.Indicator" />
+
+### `Slider.Thumb`
+
+<PropsTable component="Slider" name="Slider.Thumb" />
