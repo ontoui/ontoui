@@ -24,6 +24,7 @@ export default defineConfig({
             { label: 'Button', slug: 'components/button' },
             { label: 'Checkbox', slug: 'components/checkbox' },
             { label: 'Modal', slug: 'components/modal' },
+            { label: 'Radio Group', slug: 'components/radiogroup' },
             { label: 'Select', slug: 'components/select' },
             { label: 'Tabs', slug: 'components/tabs' },
             { label: 'TextField', slug: 'components/textfield' },

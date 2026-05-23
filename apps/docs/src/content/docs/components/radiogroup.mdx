@@ -1,0 +1,60 @@
+---
+title: Radio Group
+description: A set of radio buttons for selecting a single option from a list.
+---
+
+import { GeneralDemo, DisabledDemo } from '../../../components/RadioGroupShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A set of radio buttons for selecting a single option from a list.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Radio, RadioGroup } from '@ontoui/react';
+
+<RadioGroup defaultValue="ssd">
+  <label>
+    <Radio value="ssd" />
+    SSD
+  </label>
+  <label>
+    <Radio value="hdd" />
+    HDD
+  </label>
+</RadioGroup>;
+```
+
+## Anatomy
+
+| Part         | Description                                                     |
+| ------------ | --------------------------------------------------------------- |
+| `RadioGroup` | The root container that manages shared selection state.         |
+| `Radio`      | An individual radio button. Must be placed inside `RadioGroup`. |
+
+## Examples
+
+### Disabled
+
+Disable all options by setting `disabled` on `RadioGroup`.
+
+<DisabledDemo client:load />
+
+```tsx
+<RadioGroup defaultValue="ssd" disabled>
+  <label>
+    <Radio value="ssd" />
+    SSD
+  </label>
+</RadioGroup>
+```
+
+## API Reference
+
+### `RadioGroup`
+
+<PropsTable component="RadioGroup" />
+
+### `Radio`
+
+<PropsTable component="Radio" />

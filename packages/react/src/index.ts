@@ -35,6 +35,12 @@ export type {
 export { Tabs } from './components/Tabs';
 export type { TabsRootProps, TabsListProps, TabsTabProps, TabsPanelProps } from './components/Tabs';
 
+export { Radio } from './components/Radio';
+export type { RadioProps } from './components/Radio';
+
+export { RadioGroup } from './components/RadioGroup';
+export type { RadioGroupProps } from './components/RadioGroup';
+
 export { Select } from './components/Select';
 export type {
   SelectRootProps,
