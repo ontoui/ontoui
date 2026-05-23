@@ -23,6 +23,17 @@ export type {
   ModalCloseProps,
 } from './components/Modal';
 
+export { Popover } from './components/Popover';
+export type {
+  PopoverRootProps,
+  PopoverTriggerProps,
+  PopoverPopupProps,
+  PopoverTitleProps,
+  PopoverDescriptionProps,
+  PopoverCloseProps,
+  PopoverSide,
+} from './components/Popover';
+
 export { TextField } from './components/TextField';
 export type {
   TextFieldRootProps,

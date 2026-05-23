@@ -1,0 +1,41 @@
+.Popover-Popup {
+  box-sizing: border-box;
+  z-index: 9999;
+  min-width: 14rem;
+  max-width: 20rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  outline: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  color: #111827;
+  transition: all 150ms;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    opacity: 0;
+    scale: 0.95;
+  }
+}
+
+.Popover-Title {
+  margin-top: -0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.0025em;
+  font-weight: 700;
+}
+
+.Popover-Description {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #4b5563;
+}
+
+.Popover-Close {
+  &:focus-visible {
+    outline: 2px solid #2b94ff;
+    outline-offset: 2px;
+  }
+}

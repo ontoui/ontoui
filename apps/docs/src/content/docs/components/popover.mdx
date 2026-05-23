@@ -1,0 +1,81 @@
+---
+title: Popover
+description: An accessible popup anchored to a trigger button.
+---
+
+import { GeneralDemo, SideDemo } from '../../../components/PopoverShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+An accessible popup anchored to a trigger button.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Popover } from '@ontoui/react';
+
+<Popover.Root>
+  <Popover.Trigger>Open popover</Popover.Trigger>
+  <Popover.Popup>
+    <Popover.Title>Title</Popover.Title>
+    <Popover.Description>Description</Popover.Description>
+    <Popover.Close>Close</Popover.Close>
+  </Popover.Popup>
+</Popover.Root>;
+```
+
+## Anatomy
+
+The `Popover` compound component is made up of the following parts:
+
+| Part                  | Description                                                        |
+| --------------------- | ------------------------------------------------------------------ |
+| `Popover.Root`        | Root context provider. Manages open state.                         |
+| `Popover.Trigger`     | Button that opens the popover.                                     |
+| `Popover.Popup`       | The popup panel. Renders into a portal, positioned to the trigger. |
+| `Popover.Title`       | Accessible heading that labels the popover.                        |
+| `Popover.Description` | Supporting text associated with the popover.                       |
+| `Popover.Close`       | Button that closes the popover.                                    |
+
+## Examples
+
+### Side
+
+Control which side the popover appears on using the `side` prop on `Popover.Popup`.
+
+<SideDemo client:load />
+
+```tsx
+<Popover.Root>
+  <Popover.Trigger>top</Popover.Trigger>
+  <Popover.Popup side="top">
+    <Popover.Title>Opens on top</Popover.Title>
+    <Popover.Close>Close</Popover.Close>
+  </Popover.Popup>
+</Popover.Root>
+```
+
+## API Reference
+
+### `Popover.Root`
+
+<PropsTable component="Popover" name="Popover.Root" />
+
+### `Popover.Trigger`
+
+<PropsTable component="Popover" name="Popover.Trigger" />
+
+### `Popover.Popup`
+
+<PropsTable component="Popover" name="Popover.Popup" />
+
+### `Popover.Title`
+
+<PropsTable component="Popover" name="Popover.Title" />
+
+### `Popover.Description`
+
+<PropsTable component="Popover" name="Popover.Description" />
+
+### `Popover.Close`
+
+<PropsTable component="Popover" name="Popover.Close" />
