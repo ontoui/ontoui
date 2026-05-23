@@ -1,0 +1,92 @@
+---
+title: Accordion
+description: A set of collapsible panels with headings.
+---
+
+import { GeneralDemo, MultipleDemo, DisabledDemo } from '../../../components/AccordionShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A set of collapsible panels with headings.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Accordion } from '@ontoui/react';
+
+<Accordion.Root>
+  <Accordion.Item value="item1">
+    <Accordion.Header>
+      <Accordion.Trigger>What is OntoUI?</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>
+      <div className="Accordion-PanelContent">OntoUI is a React component library.</div>
+    </Accordion.Panel>
+  </Accordion.Item>
+</Accordion.Root>;
+```
+
+## Anatomy
+
+| Part                | Element    | Description                                             |
+| ------------------- | ---------- | ------------------------------------------------------- |
+| `Accordion.Root`    | `<div>`    | Groups all accordion items.                             |
+| `Accordion.Item`    | `<div>`    | Groups a header with its corresponding panel.           |
+| `Accordion.Header`  | `<h3>`     | A heading that labels the corresponding panel.          |
+| `Accordion.Trigger` | `<button>` | A button that opens and closes the corresponding panel. |
+| `Accordion.Panel`   | `<div>`    | A collapsible panel with the accordion item contents.   |
+
+## Examples
+
+### Multiple panels open
+
+Set `multiple` on `Accordion.Root` to allow several panels to be open simultaneously.
+
+<MultipleDemo client:load />
+
+```tsx
+<Accordion.Root multiple>
+  <Accordion.Item value="item1">
+    <Accordion.Header>
+      <Accordion.Trigger>Section A</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>Content for section A.</Accordion.Panel>
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+### Disabled item
+
+Set `disabled` on an `Accordion.Item` to prevent it from being opened.
+
+<DisabledDemo client:load />
+
+```tsx
+<Accordion.Item value="item2" disabled>
+  <Accordion.Header>
+    <Accordion.Trigger>Disabled section</Accordion.Trigger>
+  </Accordion.Header>
+  <Accordion.Panel>This section is disabled.</Accordion.Panel>
+</Accordion.Item>
+```
+
+## API Reference
+
+### `Accordion.Root`
+
+<PropsTable component="Accordion" name="Accordion.Root" />
+
+### `Accordion.Item`
+
+<PropsTable component="Accordion" name="Accordion.Item" />
+
+### `Accordion.Header`
+
+<PropsTable component="Accordion" name="Accordion.Header" />
+
+### `Accordion.Trigger`
+
+<PropsTable component="Accordion" name="Accordion.Trigger" />
+
+### `Accordion.Panel`
+
+<PropsTable component="Accordion" name="Accordion.Panel" />

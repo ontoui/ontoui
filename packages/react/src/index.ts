@@ -1,3 +1,12 @@
+export { Accordion } from './components/Accordion';
+export type {
+  AccordionRootProps,
+  AccordionItemProps,
+  AccordionHeaderProps,
+  AccordionTriggerProps,
+  AccordionPanelProps,
+} from './components/Accordion';
+
 export { Button } from './components/Button';
 export type { ButtonProps, ButtonVariant } from './components/Button';
 
