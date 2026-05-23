@@ -1,0 +1,84 @@
+---
+title: Tabs
+description: A component for toggling between related panels on the same page.
+---
+
+import { GeneralDemo, VerticalDemo, DisabledDemo } from '../../../components/TabsShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A component for toggling between related panels on the same page.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Tabs } from '@ontoui/react';
+
+<Tabs.Root defaultValue="overview">
+  <Tabs.List>
+    <Tabs.Tab value="overview">Overview</Tabs.Tab>
+    <Tabs.Tab value="projects">Projects</Tabs.Tab>
+    <Tabs.Tab value="account">Account</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value="overview">Workspace stats and activity.</Tabs.Panel>
+  <Tabs.Panel value="projects">All your active projects.</Tabs.Panel>
+  <Tabs.Panel value="account">Profile and billing settings.</Tabs.Panel>
+</Tabs.Root>;
+```
+
+## Anatomy
+
+| Part         | Element    | Description                                     |
+| ------------ | ---------- | ----------------------------------------------- |
+| `Tabs.Root`  | `<div>`    | Groups the tabs and the corresponding panels.   |
+| `Tabs.List`  | `<div>`    | Groups the individual tab buttons.              |
+| `Tabs.Tab`   | `<button>` | An interactive tab button that toggles a panel. |
+| `Tabs.Panel` | `<div>`    | A panel displayed when its tab is active.       |
+
+## Examples
+
+### Vertical
+
+Set `orientation="vertical"` on `Tabs.Root` to arrange tabs along the side.
+
+<VerticalDemo client:load />
+
+```tsx
+<Tabs.Root defaultValue="overview" orientation="vertical">
+  <Tabs.List>
+    <Tabs.Tab value="overview">Overview</Tabs.Tab>
+    <Tabs.Tab value="projects">Projects</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value="overview">Overview content.</Tabs.Panel>
+  <Tabs.Panel value="projects">Projects content.</Tabs.Panel>
+</Tabs.Root>
+```
+
+### Disabled tab
+
+Set `disabled` on a `Tabs.Tab` to prevent interaction with that tab.
+
+<DisabledDemo client:load />
+
+```tsx
+<Tabs.Tab value="projects" disabled>
+  Projects
+</Tabs.Tab>
+```
+
+## API Reference
+
+### `Tabs.Root`
+
+<PropsTable component="Tabs" name="Tabs.Root" />
+
+### `Tabs.List`
+
+<PropsTable component="Tabs" name="Tabs.List" />
+
+### `Tabs.Tab`
+
+<PropsTable component="Tabs" name="Tabs.Tab" />
+
+### `Tabs.Panel`
+
+<PropsTable component="Tabs" name="Tabs.Panel" />

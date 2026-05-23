@@ -1,0 +1,107 @@
+.Tabs {
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #111827;
+
+  &[data-orientation='vertical'] {
+    flex-direction: row;
+  }
+}
+
+.Tabs-List {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+
+  &[data-orientation='vertical'] {
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: none;
+    border-right: 1px solid #e5e7eb;
+  }
+}
+
+.Tabs-Tab {
+  position: relative;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 0.25rem 0.25rem 0 0;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  color: #6b7280;
+  white-space: nowrap;
+  user-select: none;
+  transition: color 150ms;
+
+  &:hover {
+    color: #111827;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #2b94ff;
+    outline-offset: 2px;
+  }
+
+  &[data-active] {
+    color: #111827;
+    font-weight: 600;
+  }
+
+  &[data-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &[data-orientation='vertical'] {
+    border-radius: 0.25rem 0 0 0.25rem;
+    text-align: left;
+  }
+}
+
+.Tabs-Indicator {
+  position: absolute;
+  bottom: 0;
+  left: var(--active-tab-left);
+  width: var(--active-tab-width);
+  height: 2px;
+  border-radius: 1px 1px 0 0;
+  background-color: #111827;
+  transition:
+    left 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    width 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &[data-orientation='vertical'] {
+    bottom: unset;
+    left: unset;
+    right: 0;
+    top: var(--active-tab-top);
+    width: 2px;
+    height: var(--active-tab-height);
+    border-radius: 1px 0 0 1px;
+    transition:
+      top 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      height 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.Tabs-Panel {
+  padding: 1rem 0;
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid #2b94ff;
+    outline-offset: 2px;
+  }
+
+  &[data-orientation='vertical'] {
+    padding: 0 1rem;
+  }
+}

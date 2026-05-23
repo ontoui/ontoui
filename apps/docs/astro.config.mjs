@@ -23,6 +23,7 @@ export default defineConfig({
           items: [
             { label: 'Button', slug: 'components/button' },
             { label: 'Modal', slug: 'components/modal' },
+            { label: 'Tabs', slug: 'components/tabs' },
             { label: 'TextField', slug: 'components/textfield' },
             { label: 'Tooltip', slug: 'components/tooltip' },
           ],

@@ -28,3 +28,6 @@ export type {
   TooltipSide,
   TooltipContentProps,
 } from './components/Tooltip';
+
+export { Tabs } from './components/Tabs';
+export type { TabsRootProps, TabsListProps, TabsTabProps, TabsPanelProps } from './components/Tabs';
