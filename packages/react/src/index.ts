@@ -13,6 +13,14 @@ export type { ButtonProps, ButtonVariant } from './components/Button';
 export { Checkbox } from './components/Checkbox';
 export type { CheckboxRootProps, CheckboxIndicatorProps } from './components/Checkbox';
 
+export { OtpField } from './components/OtpField';
+export type {
+  OtpFieldRootProps,
+  OtpFieldInputProps,
+  OtpFieldSeparatorProps,
+  OtpFieldValidationType,
+} from './components/OtpField';
+
 export { Modal } from './components/Modal';
 export type {
   ModalRootProps,

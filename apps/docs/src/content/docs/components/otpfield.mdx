@@ -1,0 +1,79 @@
+---
+title: OtpField
+description: A one-time password input composed of individual character slots.
+---
+
+import { GeneralDemo, GroupedDemo, DisabledDemo } from '../../../components/OtpFieldShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A one-time password input composed of individual character slots.
+
+<GeneralDemo client:load />
+
+```tsx
+import { OtpField } from '@ontoui/react';
+
+<OtpField.Root length={6}>
+  <OtpField.Input aria-label="Character 1 of 6" />
+  <OtpField.Input aria-label="Character 2 of 6" />
+  <OtpField.Input aria-label="Character 3 of 6" />
+  <OtpField.Input aria-label="Character 4 of 6" />
+  <OtpField.Input aria-label="Character 5 of 6" />
+  <OtpField.Input aria-label="Character 6 of 6" />
+</OtpField.Root>;
+```
+
+## Anatomy
+
+| Part                 | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| `OtpField.Root`      | Container that groups all slots and manages shared state |
+| `OtpField.Input`     | An individual character input slot                       |
+| `OtpField.Separator` | A visual separator between groups of slots               |
+
+## Examples
+
+### Grouped layout
+
+Use `OtpField.Separator` to visually split slots into chunks, such as `123`–`456`.
+
+<GroupedDemo client:load />
+
+```tsx
+<OtpField.Root length={6}>
+  <OtpField.Input aria-label="Character 1 of 6" />
+  <OtpField.Input aria-label="Character 2 of 6" />
+  <OtpField.Input aria-label="Character 3 of 6" />
+  <OtpField.Separator />
+  <OtpField.Input aria-label="Character 4 of 6" />
+  <OtpField.Input aria-label="Character 5 of 6" />
+  <OtpField.Input aria-label="Character 6 of 6" />
+</OtpField.Root>
+```
+
+### Disabled
+
+Set `disabled` on `OtpField.Root` to disable the entire field.
+
+<DisabledDemo client:load />
+
+```tsx
+<OtpField.Root length={6} disabled>
+  <OtpField.Input aria-label="Character 1 of 6" />
+  {/* … */}
+</OtpField.Root>
+```
+
+## API Reference
+
+### `OtpField.Root`
+
+<PropsTable component="OtpField" name="OtpField.Root" />
+
+### `OtpField.Input`
+
+<PropsTable component="OtpField" name="OtpField.Input" />
+
+### `OtpField.Separator`
+
+<PropsTable component="OtpField" name="OtpField.Separator" />
