@@ -1,0 +1,164 @@
+.Select-Label {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.Select-Trigger {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 0 12px;
+  height: 36px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #111827;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: default;
+  transition:
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.Select-Trigger:hover:not([data-disabled]) {
+  border-color: #9ca3af;
+}
+
+.Select-Trigger:focus-visible {
+  outline: 2px solid #2b94ff;
+  outline-offset: 2px;
+}
+
+.Select-Trigger[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.Select-Value {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.Select-Value[data-placeholder] {
+  color: #9ca3af;
+}
+
+.Select-Icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+  transition: transform 0.15s ease;
+}
+
+.Select-Trigger[data-popup-open] .Select-Icon {
+  transform: rotate(180deg);
+}
+
+.Select-Popup {
+  box-sizing: border-box;
+  min-width: var(--anchor-width);
+  padding: 4px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  outline: none;
+  z-index: 1000;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+.Select-List {
+  overflow-y: auto;
+  max-height: min(var(--available-height, 300px), 300px);
+}
+
+.Select-Item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #111827;
+  border-radius: 6px;
+  cursor: default;
+  outline: none;
+  user-select: none;
+}
+
+.Select-Item[data-highlighted] {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.Select-Item[data-highlighted] .Select-ItemIndicator {
+  color: #1d4ed8;
+}
+
+.Select-Item[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.Select-ItemIndicator {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: #2b94ff;
+}
+
+.Select-Group {
+  /* grouping container */
+}
+
+.Select-GroupLabel {
+  padding: 4px 8px 2px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.Select-Separator {
+  height: 1px;
+  margin: 4px 0;
+  background-color: #e5e7eb;
+}
+
+.Select-ScrollArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  font-size: 12px;
+  color: #6b7280;
+  cursor: default;
+}

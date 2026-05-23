@@ -31,3 +31,15 @@ export type {
 
 export { Tabs } from './components/Tabs';
 export type { TabsRootProps, TabsListProps, TabsTabProps, TabsPanelProps } from './components/Tabs';
+
+export { Select } from './components/Select';
+export type {
+  SelectRootProps,
+  SelectLabelProps,
+  SelectTriggerProps,
+  SelectPopupProps,
+  SelectItemProps,
+  SelectGroupProps,
+  SelectGroupLabelProps,
+  SelectSeparatorProps,
+} from './components/Select';

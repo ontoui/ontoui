@@ -1,0 +1,117 @@
+---
+title: Select
+description: A form control for choosing a predefined value from a dropdown list.
+---
+
+import { GeneralDemo, DisabledDemo, GroupedDemo } from '../../../components/SelectShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A form control for choosing a predefined value from a dropdown list.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Select } from '@ontoui/react';
+
+<Select.Root>
+  <Select.Label>Fruit</Select.Label>
+  <Select.Trigger placeholder="Choose a fruit" />
+  <Select.Popup>
+    <Select.Item value="apple">Apple</Select.Item>
+    <Select.Item value="banana">Banana</Select.Item>
+    <Select.Item value="orange">Orange</Select.Item>
+  </Select.Popup>
+</Select.Root>;
+```
+
+## Anatomy
+
+| Part                | Description                                                        |
+| ------------------- | ------------------------------------------------------------------ |
+| `Select.Root`       | Groups all parts of the select.                                    |
+| `Select.Label`      | An accessible label associated with the trigger.                   |
+| `Select.Trigger`    | A button that opens the select popup and shows the selected value. |
+| `Select.Popup`      | A container for the select items.                                  |
+| `Select.Item`       | An individual selectable option.                                   |
+| `Select.Group`      | Groups related options together.                                   |
+| `Select.GroupLabel` | A label for a group of options.                                    |
+| `Select.Separator`  | A visual separator between items or groups.                        |
+
+## Examples
+
+### Disabled
+
+A disabled select prevents user interaction.
+
+<DisabledDemo client:load />
+
+```tsx
+<Select.Root disabled>
+  <Select.Label>Fruit</Select.Label>
+  <Select.Trigger placeholder="Choose a fruit" />
+  <Select.Popup>
+    <Select.Item value="apple">Apple</Select.Item>
+    <Select.Item value="banana">Banana</Select.Item>
+  </Select.Popup>
+</Select.Root>
+```
+
+### Grouped
+
+Use `Select.Group` and `Select.GroupLabel` to organize related options into sections.
+
+<GroupedDemo client:load />
+
+```tsx
+<Select.Root>
+  <Select.Label>Produce</Select.Label>
+  <Select.Trigger placeholder="Choose an item" />
+  <Select.Popup>
+    <Select.Group>
+      <Select.GroupLabel>Fruits</Select.GroupLabel>
+      <Select.Item value="apple">Apple</Select.Item>
+      <Select.Item value="banana">Banana</Select.Item>
+    </Select.Group>
+    <Select.Separator />
+    <Select.Group>
+      <Select.GroupLabel>Vegetables</Select.GroupLabel>
+      <Select.Item value="carrot">Carrot</Select.Item>
+      <Select.Item value="lettuce">Lettuce</Select.Item>
+    </Select.Group>
+  </Select.Popup>
+</Select.Root>
+```
+
+## API Reference
+
+### `Select.Root`
+
+<PropsTable component="Select" name="Select.Root" />
+
+### `Select.Label`
+
+<PropsTable component="Select" name="Select.Label" />
+
+### `Select.Trigger`
+
+<PropsTable component="Select" name="Select.Trigger" />
+
+### `Select.Popup`
+
+<PropsTable component="Select" name="Select.Popup" />
+
+### `Select.Item`
+
+<PropsTable component="Select" name="Select.Item" />
+
+### `Select.Group`
+
+<PropsTable component="Select" name="Select.Group" />
+
+### `Select.GroupLabel`
+
+<PropsTable component="Select" name="Select.GroupLabel" />
+
+### `Select.Separator`
+
+<PropsTable component="Select" name="Select.Separator" />
