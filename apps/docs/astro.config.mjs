@@ -28,6 +28,7 @@ export default defineConfig({
             { label: 'Select', slug: 'components/select' },
             { label: 'Tabs', slug: 'components/tabs' },
             { label: 'TextField', slug: 'components/textfield' },
+            { label: 'Toast', slug: 'components/toast' },
             { label: 'Tooltip', slug: 'components/tooltip' },
           ],
         },

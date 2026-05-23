@@ -1,0 +1,106 @@
+---
+title: Toast
+description: A brief message displayed to give feedback about an action or event.
+---
+
+import { GeneralDemo, ActionDemo } from '../../../components/ToastShowcase';
+import PropsTable from '../../../components/PropsTable.astro';
+
+A brief message displayed to give feedback about an action or event.
+
+<GeneralDemo client:load />
+
+```tsx
+import { Toast } from '@ontoui/react';
+
+function MyToasts() {
+  const { toasts, add } = Toast.useToastManager();
+  return (
+    <>
+      <button
+        onClick={() => add({ title: 'Saved!', description: 'Your changes have been saved.' })}
+      >
+        Save
+      </button>
+      <Toast.Viewport>
+        {toasts.map((toast) => (
+          <Toast.Root key={toast.id} toast={toast}>
+            <Toast.Content>
+              <Toast.Title>{toast.title}</Toast.Title>
+              <Toast.Description>{toast.description}</Toast.Description>
+              <Toast.Close>✕</Toast.Close>
+            </Toast.Content>
+          </Toast.Root>
+        ))}
+      </Toast.Viewport>
+    </>
+  );
+}
+
+<Toast.Provider>
+  <MyToasts />
+</Toast.Provider>;
+```
+
+## Anatomy
+
+The `Toast` compound component is made up of the following parts:
+
+| Part                | Description                                                                       |
+| ------------------- | --------------------------------------------------------------------------------- |
+| `Toast.Provider`    | Provides toast context. Wrap your app (or a subtree) with this once.              |
+| `Toast.Viewport`    | Fixed-position container that renders all active toasts via a portal.             |
+| `Toast.Root`        | Root element for an individual toast. Requires a `toast` object from the manager. |
+| `Toast.Content`     | Container for toast content. Handles overflow and stacking animations.            |
+| `Toast.Title`       | Heading that labels the toast.                                                    |
+| `Toast.Description` | Body text describing the event.                                                   |
+| `Toast.Close`       | Button that dismisses the toast.                                                  |
+| `Toast.Action`      | Optional action button inside the toast (e.g. "Undo").                            |
+
+Use `Toast.useToastManager()` inside a `Toast.Provider` to get the `add`, `close`, and `update` methods.
+
+## Examples
+
+### With action
+
+Use `Toast.Action` to give users a way to respond to the notification.
+
+<ActionDemo client:load />
+
+```tsx
+<Toast.Action onClick={() => close(toast.id)}>Undo</Toast.Action>
+```
+
+## API Reference
+
+### `Toast.Provider`
+
+<PropsTable component="Toast" name="Toast.Provider" />
+
+### `Toast.Viewport`
+
+<PropsTable component="Toast" name="Toast.Viewport" />
+
+### `Toast.Root`
+
+<PropsTable component="Toast" name="Toast.Root" />
+
+### `Toast.Content`
+
+<PropsTable component="Toast" name="Toast.Content" />
+
+### `Toast.Title`
+
+<PropsTable component="Toast" name="Toast.Title" />
+
+### `Toast.Description`
+
+<PropsTable component="Toast" name="Toast.Description" />
+
+### `Toast.Close`
+
+<PropsTable component="Toast" name="Toast.Close" />
+
+### `Toast.Action`
+
+<PropsTable component="Toast" name="Toast.Action" />
