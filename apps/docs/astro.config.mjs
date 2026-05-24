@@ -13,6 +13,7 @@ export default defineConfig({
     react(),
     starlight({
       title: 'OntoUI',
+      favicon: '/icon.svg',
       sidebar: [
         {
           label: 'Overview',
