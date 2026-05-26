@@ -2,7 +2,7 @@ import * as React from 'react';
 import { OTPFieldPreview as BaseOTPField } from '@base-ui/react/otp-field';
 import styles from './OtpField.module.css';
 
-export type OtpFieldValidationType = 'numeric' | 'alphabetic' | 'alphanumeric' | 'none';
+export type OtpFieldValidationType = 'numeric' | 'alpha' | 'alphanumeric' | 'none';
 
 export interface OtpFieldRootProps {
   children?: React.ReactNode;
