@@ -1,3 +1,12 @@
+/* Match Starlight accent to logo colors */
+:root,
+[data-theme='light'] {
+  --sl-color-accent-low: rgba(107, 159, 255, 0.12);
+  --sl-color-accent: #6b9fff;
+  --sl-color-accent-high: #3b72e8;
+  --sl-color-text-accent: #3b72e8;
+}
+
 .sl-markdown-content :is(h1, h2, h3, h4, h5, h6) > a {
   color: inherit;
   text-decoration: none;
