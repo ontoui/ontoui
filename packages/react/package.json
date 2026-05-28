@@ -12,10 +12,14 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles": "./dist/react.css"
+    "./styles.css": {
+      "types": "./styles.d.ts",
+      "default": "./dist/react.css"
+    }
   },
   "files": [
-    "dist"
+    "dist",
+    "styles.d.ts"
   ],
   "sideEffects": [
     "**/*.css"

@@ -46,7 +46,7 @@ export default defineConfig({
       expressiveCode: {
         themes: ['ayu-light'],
       },
-      customCss: ['@ontoui/react/styles', './src/styles/common.css'],
+      customCss: ['@ontoui/react/styles.css', './src/styles/common.css'],
       social: [
         {
           icon: 'github',
